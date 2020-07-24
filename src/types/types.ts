@@ -11,3 +11,12 @@ export interface SecretsConfiguration {
         stripeApiKey: string;
     };
 }
+
+interface SopsLike {
+    version: string;
+    mac: string;
+    lastmodified: string;
+}
+export interface EncryptedSecretsConfiguration extends SecretsConfiguration {
+    sops: SopsLike;
+}

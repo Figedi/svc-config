@@ -24,7 +24,7 @@
               "required": ["common.json"]
             }
           },
-          "required": ["secrets.json", "service"]
+          "required": ["service"]
         }
       },
       "required": ["configs"]

@@ -1,4 +1,4 @@
-import { SecretsConfiguration, CommonConfiguration } from "./types";
+import { EncryptedSecretsConfiguration, CommonConfiguration } from "./types";
 
 export * from "./types";
 
@@ -8,12 +8,7 @@ export interface ConfigRepository {
             service: {
                 "common.json": CommonConfiguration;
             };
-            tenant: {
-                [tenantName: string]: {
-                    "secrets.json": SecretsConfiguration;
-                    [fileName: string]: SecretsConfiguration | string;
-                };
-            };
+            "secrets.enc.json": EncryptedSecretsConfiguration;
         };
     };
 }

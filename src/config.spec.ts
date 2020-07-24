@@ -15,6 +15,7 @@ describe("config", () => {
     it("validates the provided schemas correctly", () => {
         // strips away sops sections from any secrets-file and replaces the fileName to secrets.json
         const resourceTree = getResourceFilesWithoutSops();
+
         // the root-schema has resources as top-level prop
         const resources = { resources: resourceTree };
         const isValid = validator.validate(dereferencedSchema, resources);
