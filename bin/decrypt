@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+RESOURCE_FILES="${BIN_DIR}/../resources"
+
+FILE=$1
+
+if ! type sops &> /dev/null; then
+  echo "You are missing sops binary, install by running 'brew install sops'"
+  exit
+fi
+
+decrypt() {
+  readonly _file=$1
+  echo "Decrypting $(basename $_file)"
+  sops --decrypt --input-type json --output-type json --in-place $_file
+}
+
+decrypt_all_files() {
+  FILES=$(find "${RESOURCE_FILES}" -type f -name "*.enc.json")
+  for file in ${FILES[@]}; do
+    decrypt $file
+  done
+}
+
+if [ -z $FILE ]; then
+  decrypt_all_files
+else
+  decrypt $FILE
+fi

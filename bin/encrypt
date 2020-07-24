@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+RESOURCE_FILES="${BIN_DIR}/../resources"
+FILES=$(find "${RESOURCE_FILES}" -type f -name "*.enc.json")
+
+if ! type sops &> /dev/null; then
+  echo "You are missing sops binary, install by running 'brew install sops'"
+  exit
+fi
+
+for file in ${FILES[@]}; do
+  ENCRYPTED=$(grep -o "sops" $file)
+  if [ ! -z $ENCRYPTED ]; then
+    echo "File has already been encrypted, skipping";
+    continue
+  fi
+  echo "Encrypting file $(basename $file)"
+  sops --encrypt --input-type json --output-type json --in-place $file
+done
+

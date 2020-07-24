@@ -1,0 +1,34 @@
+{
+  "$id": "http://figedi.de/schemas/root.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "resources": {
+      "type": "object",
+      "properties": {
+        "configs": {
+          "type": "object",
+          "properties": {
+            "secrets.json": {
+              "$ref": "secrets.schema.json"
+            },
+            "secrets.enc.json": {
+              "$ref": "secrets.encrypted.schema.json"
+            },
+            "service": {
+              "type": "object",
+              "properties": {
+                "common.json": {
+                  "$ref": "common.schema.json"
+                }
+              },
+              "required": ["common.json"]
+            }
+          },
+          "required": ["secrets.json", "service"]
+        }
+      },
+      "required": ["configs"]
+    }
+  },
+  "required": ["resources"]
+}

@@ -1,0 +1,14 @@
+{
+  "$id": "http://figedi.de/schemas/common.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "logLevel": {
+      "type": "string"
+    },
+    "defaultLanguage": {
+      "type": "string"
+    }
+  },
+  "required": ["logLevel", "defaultLanguage"]
+
+}

@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "lint-staged && bin/check_if_encrypted",
+    "pre-push": "yarn specs && bin/check_if_encrypted"
+  }
+}

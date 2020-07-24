@@ -1,0 +1,56 @@
+{
+  "name": "@figedi/svc-config",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "specs": "_mocha --require ts-node/register src/**/*.spec.ts",
+    "specs:debug": "node --inspect-brk ./node_modules/.bin/_mocha --require ts-node/register src/**/*.spec.ts",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "build": "tsc && cp -r src/schemas dist/"
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "npm run lint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figedi/svc-config.git"
+  },
+  "keywords": [],
+  "author": "Felix Kaminski <kaminski.felix@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/figedi/svc-config/issues"
+  },
+  "homepage": "https://github.com/figedi/svc-config#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.1.8",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.0",
+    "mocha": "^7.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@figedi/typecop": "^1.1.0",
+    "lodash": "^4.17.15",
+    "mime-types": "^2.1.26",
+    "pkg-up": "^3.1.0"
+  }
+}
