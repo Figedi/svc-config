@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.2 (2020-07-24)
+
+
+### Features
+
+* initial commit ([308548c](https://github.com/figedi/svc-config/commit/308548c34e96aaa2cbf98fc3388443531c2ab1e6))
+
 ### [1.1.5](https://github.com/figedi/metering/compare/v1.1.4...v1.1.5) (2020-07-19)
 
 ### [1.1.4](https://github.com/figedi/metering/compare/v1.1.3...v1.1.4) (2020-07-19)
