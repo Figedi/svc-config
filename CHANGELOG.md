@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/figedi/svc-config/compare/v0.0.2...v0.0.3) (2020-07-24)
+
+
+### Bug Fixes
+
+* aligns types w/ outputted files/schemas ([57f6b18](https://github.com/figedi/svc-config/commit/57f6b188ebf3901d56a31dfcf149329424de396f))
+
 ### 0.0.2 (2020-07-24)
 
 
