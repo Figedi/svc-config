@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 import { omit, isArray, isPlainObject, mapValues } from "lodash";
 import { readdirSync } from "fs";
 import { join } from "path";
@@ -22,9 +23,8 @@ const walk = (tree: any, pathMemo: (string | number)[], ...transformers: TreeNod
     return tree;
 };
 
-export const treeWalker = <T>(tree: T, ...transformers: TreeNodeTransformerConfig[]): T => {
-    return walk(tree, [], ...transformers);
-};
+export const treeWalker = <T>(tree: T, ...transformers: TreeNodeTransformerConfig[]): T =>
+    walk(tree, [], ...transformers);
 
 export const getResourceTree = (basePath: string, nameSuffix: string): Record<string, any> => {
     const files = readdirSync(basePath, { withFileTypes: true });

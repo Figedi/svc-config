@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 import { JSONSchema } from "@figedi/typecop";
 import { readdirSync, Dirent } from "fs";
 import { join } from "path";

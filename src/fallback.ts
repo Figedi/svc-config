@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 import { join, extname } from "path";
 import { readdirSync, readFileSync, Dirent } from "fs";
 import { RESOURCE_BASE_DIR } from "./utils";

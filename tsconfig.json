@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
+    "target": "es2022",
     "sourceMap": true,
     "declaration": true,
     "rootDir": "./src",
@@ -15,12 +15,13 @@
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "pretty": true,
     "typeRoots": [
       "./node_modules/@types",
     ],
     "lib": [
-      "es2017"
+      "es2022"
     ]
   },
   "exclude": [
